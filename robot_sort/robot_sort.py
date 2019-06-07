@@ -101,11 +101,11 @@ class SortingRobot:
         self.set_light_on()
         while self.light_is_on() :
             self.swap_item() # pick item by swapping None into next item in list,    
-            while self.can_move_right() :
+            while self.can_move_right() : # O(n)
                 self.move_right()
                 if self.compare_item() == 1 : # item > positional item
                     self.swap_item()
-
+                                            #O(n)
             while self.compare_item() != None  : # find the None position
                 self.move_left()
                 if self.compare_item() == None : # swap item into None position
