@@ -48,8 +48,14 @@ let array zero is ground floor, then ground floor to _f_ floor would contain zer
 
 The plan:
 Build an array of length nth story building, containing zero broken eggs to number of broken eggs.
-for floor in  range (nth story building):
-  if floor[n] contains broken eggs:
-    return n
+upper=n floor
+lower = 0 ground floor
 
-Complexity : O(n) - one for loop
+while lower < upper>
+mid = upper-lower //2
+if floor[mid] has broken egg and [floor[mid -1] (one floor below) has no broken egg
+  found the floor f
+if floor[mid] has no broken egg
+  upper = (len(floor) - mid )//2  # upper floor
+if floor[mid] has broken egg
+  lower = mid // 2 # go lower floor
