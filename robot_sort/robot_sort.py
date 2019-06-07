@@ -111,11 +111,15 @@ class SortingRobot:
             self.set_light_off()
             while self.can_move_right() :
                 self.move_right()
-                print(f' before compare {self._list} {self.compare_item()}')
-                if self.compare_item() == 1 :
+                if self.compare_item() == 1 : # item > positional item
                     self.swap_item()
                     self.set_light_on()
-                    print(f' list {self._list}')
+                 
+            while self.can_move_left():
+                self.move_left()
+                if self.compare_item() == -1 : # item < positional item
+                    self.swap_item()
+                    self.set_light_on()
 
         
 
