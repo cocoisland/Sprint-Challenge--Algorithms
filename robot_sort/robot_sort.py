@@ -97,29 +97,28 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        '''
-        print(f' original list {self._list}')
-        #while self.can_move_right():
-            #self.move_right()
         
-        self.move_left()
-        self.swap_item()
-        print(f' original list2 {self._list}')
-        '''
         self.set_light_on()
         while self.light_is_on() :
-            self.set_light_off()
+            self.swap_item() # pick item by swapping None into next item in list,    
             while self.can_move_right() :
                 self.move_right()
                 if self.compare_item() == 1 : # item > positional item
                     self.swap_item()
-                    self.set_light_on()
-                 
-            while self.can_move_left():
+
+            while self.compare_item() != None  : # find the None position
                 self.move_left()
-                if self.compare_item() == -1 : # item < positional item
+                if self.compare_item() == None : # swap item into None position
                     self.swap_item()
-                    self.set_light_on()
+                    
+            if self.can_move_right() : # moving None position right
+                self.move_right()
+            else:           # None position reach end of right
+                self.swap_item() # swap last item onto list.
+                self.set_light_off()
+
+                
+            
 
         
 

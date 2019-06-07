@@ -10,29 +10,30 @@ a)  a = 0
     while (a < n * n * n):
       a = a + n * n
 ```
-#  O(n). One while loop with large number n^3.
+#  O(n). One while loop with large number.
 
 ```
 b)  sum = 0
-    for i in range(n):
+    for i in range(n):  # O(n)
       i += 1
-      for j in range(i + 1, n):
+      for j in range(i + 1, n): # O(n)
         j += 1
-        for k in range(j + 1, n):
+        for k in range(j + 1, n): #O(n)
           k += 1
-          for l in range(k + 1, 10 + k):
+          for l in range(k + 1, 10 + k): #O(1)
             l += 1
             sum += 1
 ```
-# O(n^4) . Four for loop.
+# O(n^3) . Four for loop.
 ```
 c)  def bunnyEars(bunnies):
       if bunnies == 0:
         return 0
 
-      return 2 + bunnyEars(bunnies-1)
+      return 2 + bunnyEars(bunnies-1) #O(n)
 ```
-# O(2^n) . Recursive looping
+# O(2^n) . => bunnyEars(bunnies -1) + bunnyEars(bunnies -2) Recursive looping
+# O(n) => bunnyEars(bunnies-1) like a single loop backward
 
 ## Exercise II
 
